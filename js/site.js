@@ -4,7 +4,7 @@ function getValue(){
     //make sure the alert is invisible
     document.getElementById("alert").classList.add("invisible");
     //get user string for the page
-    document.getElementById("userString").value;
+   let userString = document.getElementById("userString").value;
 
     //check for a palindrome
     let returnObj = checkForPalindrome(userString);
@@ -17,12 +17,11 @@ function getValue(){
 //check if string is a palindrome
 function checkForPalindrome(userString){
 
-
     // lowercase the input values
    userString = userString.toLowerCase();
 
    //remove spaces and special characters
-   let regex = /[^a-z0-9]/gi;
+   let regex =  /[^a-z0-9]/gi;
    userString = userString.replace(regex,"");
 
    let revString = [];
@@ -47,10 +46,10 @@ function checkForPalindrome(userString){
 
 
 // display a message to the string.
-function displayMessage(){
+function displayMessage(returnObj){
 
     document.getElementById("alertHeader").innerHTML = returnObj.msg;
-    document.getElementById("msg"),innerHTML = `Your phrase reversed is: ${returnObj.reversed}`
+    document.getElementById("msg").innerHTML = `Your phrase reversed is: ${returnObj.reversed}`
     document.getElementById("alert").classList.remove("invisible");
 
 }
